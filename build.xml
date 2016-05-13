@@ -30,10 +30,7 @@
    
 <target name="build-war" depends="compile" description="Creating war file">
    <war destfile="SampleSpringProject.war" webxml="${web.dir}/WEB-INF/web.xml">
-      <fileset dir="${web.dir}/WebContent">
-         <include name="**/*.*"/>
-      </fileset>
-       <classes dir="${build.dir}/web"/>
+          <classes dir="${build.dir}/web"/>
    </war>
  </target>
  
