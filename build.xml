@@ -65,9 +65,6 @@
     </fileset>
  </path>
  
- <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
-    <classpath refid="catalina-ant-classpath"/>
- </taskdef>
  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
     <classpath refid="catalina-ant-classpath"/>
  </taskdef>
