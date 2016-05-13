@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <project name="SampleSpringProject" basedir="." default="main">
+   <property file="build.properties"/>
    <property name="src.dir" value="src/main/java"/>
    <property name="web.dir" value="src/main/webapp"/>
    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
