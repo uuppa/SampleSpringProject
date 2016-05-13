@@ -33,10 +33,10 @@
       <fileset dir="${web.dir}">
          <include name="**/*.*"/>
        </fileset>
-          <classes dir="${build.dir}"/>
+       <classes dir="${build.dir}"/>
    </war>
  </target>
  
  
-   <target name="main" depends="clean,build-war"/>
+   <target name="main" depends="clean,compile"/>
 </project>
