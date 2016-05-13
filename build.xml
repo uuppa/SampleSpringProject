@@ -38,5 +38,5 @@
  </target>
  
  
-   <target name="main" depends="clean,compile"/>
+   <target name="main" depends="clean,build-war"/>
 </project>
