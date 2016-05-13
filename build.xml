@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="SampleSpringProject" basedir="." default="main">
-   <property file="build.properties"/>
+	<property file="build.properties"/>
    <property name="src.dir" value="src/main/java"/>
    <property name="web.dir" value="src/main/webapp"/>
    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
@@ -52,8 +52,7 @@
       </copy>
  </target>
  
- 
-  <!-- ============================================================ -->
+ <!-- ============================================================ -->
  <!-- Tomcat tasks -->
  <!-- ============================================================ -->
  
@@ -62,9 +61,17 @@
  <!--  * for other app servers - check the docs -->
     <fileset dir="${appserver.lib}">
        <include name="catalina-ant.jar"/>
+       <include name="tomcat-coyote.jar"/>
+       <include name="tomcat-util.jar"/>
+    </fileset>
+    <fileset dir="${appserver.home}/bin">
+       <include name="tomcat-juli.jar"/>
     </fileset>
  </path>
  
+ <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask">
+    <classpath refid="catalina-ant-classpath"/>
+ </taskdef>
  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
     <classpath refid="catalina-ant-classpath"/>
  </taskdef>
@@ -79,8 +86,9 @@
  </taskdef>
  
  <target name="reload" description="Reload application in Tomcat">
-    <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
+    <reload url="${tomcat.manager.url}"username="${tomcat.manager.username}"
+       password="${tomcat.manager.password}" path="/${name}"/>
 </target>
  
- <target name="main" depends="clean,deploywar,reload"/>
+<target name="main" depends="clean,deploywar,reload"/>
 </project>
