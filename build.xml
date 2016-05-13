@@ -29,7 +29,7 @@
    </target>
    
 <target name="build-war" depends="compile" description="Creating war file">
-   <war destfile="SampleSpringProject.war" webxml="${web.dir}/web.xml">
+   <war destfile="SampleSpringProject.war" webxml="${web.dir}/WEB-INF/web.xml">
       <fileset dir="${web.dir}/WebContent">
          <include name="**/*.*"/>
       </fileset>
