@@ -82,8 +82,7 @@
  </taskdef>
  
  <target name="reload" description="Reload application in Tomcat">
-    <reload url="${tomcat.manager.url}"username="${tomcat.manager.username}"
-       password="${tomcat.manager.password}" path="/${name}"/>
+    <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
 </target>
  
  <target name="main" depends="clean,deploywar,reload"/>
