@@ -86,7 +86,8 @@
  </taskdef>
  
  <target name="install" description="Install application in Tomcat">
-    <install url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
+    <install url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" 
+    path="${deploy.path}" war="/${name}.war}"/>
 </target>
  <target name="reload" description="Reload application in Tomcat">
     <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
