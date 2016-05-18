@@ -89,5 +89,5 @@
     <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
 </target>
  
-<target name="main" depends="deploywar,reload,clean"/>
+<target name="main" depends="deploywar,deploy,reload,clean"/>
 </project>
