@@ -69,7 +69,7 @@
     </fileset>
  </path>
  
- <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask">
+ <taskdef name="install" classname="org.apache.catalina.ant.DeployTask">
     <classpath refid="catalina-ant-classpath"/>
  </taskdef>
  <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
@@ -85,9 +85,12 @@
     <classpath refid="catalina-ant-classpath"/>
  </taskdef>
  
+ <target name="install" description="Install application in Tomcat">
+    <deploy url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
+</target>
  <target name="reload" description="Reload application in Tomcat">
     <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}"/>
 </target>
  
-<target name="main" depends="deploywar,deploy,reload,clean"/>
+<target name="main" depends="deploywar,install,clean"/>
 </project>
