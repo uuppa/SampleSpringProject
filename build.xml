@@ -39,6 +39,7 @@
    </target>
    
 <target name="deploywar" depends="deploy" description="Creating war file">
+	<echo message="Building the war file and copying it to tomcat webapps folder"/>
    <war destfile="${name}.war" webxml="${web.dir}/WEB-INF/web.xml">
       <fileset dir="${web.dir}">
          <include name="**/*.*"/>
@@ -86,13 +87,11 @@
  </taskdef>
  
  <target name="install" description="Install application in Tomcat">
- 	<echo message="${deploy.path}"/>
- 	<echo message="${deploy.path}/${name}.war"/>
-    <install url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}" war="${deploy.path}/${name}.war}"/>
+ 	<install url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}" war="${deploy.path}/${name}.war}"/>
 </target>
  <target name="reload" description="Reload application in Tomcat">
     <reload url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="/${name}" />
 </target>
  
-<target name="main" depends="deploywar,install,clean"/>
+<target name="main" depends="deploywar,reload,clean"/>
 </project>
