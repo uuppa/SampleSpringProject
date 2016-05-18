@@ -87,7 +87,7 @@
  
  <target name="install" description="Install application in Tomcat">
  	<echo message="${deploy.path}"/>
- 	<echo message="${deploy.path}/${name}.war/>
+ 	<echo message="${deploy.path}/${name}.war"/>
     <install url="${tomcat.manager.url}" username="${tomcat.manager.username}" password="${tomcat.manager.password}" path="${deploy.path}" war="${deploy.path}/${name}.war}"/>
 </target>
  <target name="reload" description="Reload application in Tomcat">
